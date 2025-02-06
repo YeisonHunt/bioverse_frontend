@@ -32,11 +32,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const user = await authService.login(username, password);
       setUser(user);
       router.push(user.role === 'admin' ? '/admin' : '/questionnaires');
-    } catch (error: any) {
-      setError(error.response?.data?.message || 'Login failed');
+    } catch (error: Error | unknown) {
+      const err = error as { response?: { data?: { message?: string } } };
+      setError(err.response?.data?.message || 'Login failed');
       throw error;
     }
-  };
+   };
 
   const logout = () => {
     authService.logout();

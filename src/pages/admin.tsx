@@ -9,7 +9,6 @@ import {
   LogOut, 
   Users, 
   ClipboardList,
-  ChevronRight,
   Search
 } from 'lucide-react';
 import { MCQResponse } from '../components/MCQResponse';
@@ -69,6 +68,7 @@ export default function Admin() {
       setUsers(data);
     } catch (err) {
       setError('Failed to load users');
+      console.log(err)
     } finally {
       setLoading(false);
     }
@@ -81,6 +81,7 @@ export default function Admin() {
       setUserResponses(responses);
     } catch (err) {
       setError('Failed to load user responses');
+      console.log(err)
     }
   };
 

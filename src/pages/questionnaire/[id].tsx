@@ -92,6 +92,7 @@ export default function Questionnaire() {
       }
     } catch (error) {
       setError('Failed to load questionnaire');
+      console.log(error)
     } finally {
       setLoading(false);
     }
@@ -107,6 +108,7 @@ export default function Questionnaire() {
       router.push('/questionnaires');
     } catch (error) {
       setError('Failed to submit responses');
+      console.log(error)
     } finally {
       setSubmitting(false);
     }
@@ -186,7 +188,7 @@ export default function Questionnaire() {
           >
             {questionnaire.questions
               .sort((a, b) => a.QuestionnaireQuestion.priority - b.QuestionnaireQuestion.priority)
-              .map((question, index) => (
+              .map((question, _index) => (
                 <motion.div
                   key={question.id}
                   variants={item}

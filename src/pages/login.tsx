@@ -18,6 +18,7 @@ export default function Login() {
       await login(credentials.username, credentials.password);
     } catch (err) {
       setError('Invalid credentials. Please try again.');
+      console.log(err)
     } finally {
       setLoading(false);
     }
@@ -59,7 +60,7 @@ export default function Login() {
         <form onSubmit={handleLogin} className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Username should be: "user" or "admin"
+              Username should be: &quot;user&quot; or &quot;admin&quot;
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">

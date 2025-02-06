@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ClipboardCheck, Activity, FileCheck2, Stethoscope, UserCheck, Database, ShieldCheck } from "lucide-react";
+import { ArrowRight, ClipboardCheck, Activity, Stethoscope, ShieldCheck } from "lucide-react";
 import { useRouter } from "next/router";
 import { Geist } from "next/font/google";
 
@@ -78,7 +78,7 @@ const Questionnaire3D = () => (
   </div>
 );
 
-//@ts-ignore childer props definition not needed
+//@ts-expect-error childer props definition not needed
 const FloatingCard = ({ delay = 0, x = 0, y = 0, children }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
